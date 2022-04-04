@@ -10,6 +10,8 @@ public class DemoLogOnUI extends JFrame {
     private DemoLogOnUI(){
         super("Logon");
 
+        // JPANELS für einzelne Felder
+
         JPanel userPanel = new JPanel();
         userPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         userPanel.add(new JLabel("User:            "));
@@ -52,25 +54,49 @@ public class DemoLogOnUI extends JFrame {
         zielPanel.add(new JLabel("Ziel:                "));
         zielPanel.add(new JTextField(8));
 
+        // HauptPanel
+
         JPanel rootWindow = new JPanel();
         rootWindow.setLayout(new BorderLayout());
+
+        // RotesPanel
 
         JPanel rotesPanel = new JPanel();
         rotesPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-
-        Border blauesPanelLinksBorder = BorderFactory.createTitledBorder("Verbindung");
+        // BlauePanels
 
         JPanel blauesPanelLinks = new JPanel();
         blauesPanelLinks.setLayout(new GridLayout(5,1));
+
+        JPanel blauesPanelRechts = new JPanel();
+        blauesPanelRechts.setLayout(new GridLayout(2,1));
+
+        // ButtonPanel
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        // Borders
+
+        Border roterEingelassenerBorder = BorderFactory.createBevelBorder(1);
+
+        rotesPanel.setBorder(roterEingelassenerBorder);
+
+        Border blauesPanelLinksBorder = BorderFactory.createTitledBorder("Verbindung");
+
+        blauesPanelLinks.setBorder(blauesPanelLinksBorder);
+
+        Border blauesPanelRechtsBorder = BorderFactory.createTitledBorder("Dateien");
+
+        blauesPanelRechts.setBorder(blauesPanelRechtsBorder);
+
 
         blauesPanelLinks.add(userPanel);
         blauesPanelLinks.add(passwordPanel);
         blauesPanelLinks.add(artPanel);
         blauesPanelLinks.add(hostPanel);
         blauesPanelLinks.add(portPanel);
-
-        blauesPanelLinks.setBorder(blauesPanelLinksBorder);
 
         rotesPanel.add(blauesPanelLinks);
 
@@ -80,26 +106,15 @@ public class DemoLogOnUI extends JFrame {
 
         // Hier gehts los mit "Dateien"
 
-        Border blauesPanelRechtsBorder = BorderFactory.createTitledBorder("Dateien");
-
-        JPanel blauesPanelRechts = new JPanel();
-        blauesPanelRechts.setLayout(new GridLayout(2,1));
-
         blauesPanelRechts.add(quellePanel);
         blauesPanelRechts.add(zielPanel);
 
-        blauesPanelRechts.setBorder(blauesPanelRechtsBorder);
-
         rotesPanel.add(blauesPanelRechts);
 
-        JPanel continuePanel = new JPanel();
-        continuePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.add(new JButton("OK"));
+        buttonPanel.add(new JButton("Cancel"));
 
-        continuePanel.add(new JButton("OK"));
-        continuePanel.add(new JButton("Cancel"));
-
-        rootWindow.add(continuePanel, BorderLayout.CENTER);
-
+        rootWindow.add(buttonPanel, BorderLayout.CENTER);
 
         this.add(rootWindow);
 
