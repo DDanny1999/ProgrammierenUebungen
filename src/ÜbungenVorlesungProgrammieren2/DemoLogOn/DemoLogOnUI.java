@@ -91,6 +91,7 @@ public class DemoLogOnUI extends JFrame {
 
         blauesPanelRechts.setBorder(blauesPanelRechtsBorder);
 
+        // Hinzufügen der Elemente auf das BlauePanelLinks
 
         blauesPanelLinks.add(userPanel);
         blauesPanelLinks.add(passwordPanel);
@@ -106,6 +107,8 @@ public class DemoLogOnUI extends JFrame {
 
         // Hier gehts los mit "Dateien"
 
+        // Hinzufügen der Elemente auf das BlauePanelRechts
+
         blauesPanelRechts.add(quellePanel);
         blauesPanelRechts.add(zielPanel);
 
@@ -115,6 +118,10 @@ public class DemoLogOnUI extends JFrame {
         buttonPanel.add(new JButton("Cancel"));
 
         rootWindow.add(buttonPanel, BorderLayout.CENTER);
+
+        // Ende von Verbindungen
+
+        // StandardParameter
 
         this.add(rootWindow);
 
