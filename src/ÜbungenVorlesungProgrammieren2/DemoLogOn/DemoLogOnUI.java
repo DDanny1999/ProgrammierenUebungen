@@ -15,9 +15,32 @@ public class DemoLogOnUI extends JFrame {
 
         // MaskFormater's
 
-        MaskFormatter intOnly = new MaskFormatter("##");
+        MaskFormatter intOnly = new MaskFormatter("#####");
         MaskFormatter stringOnlyBIG = new MaskFormatter("UUUUUUU");
         MaskFormatter stringOnly = new MaskFormatter("???????");
+
+        // HauptPanel
+
+        JPanel rootWindow = new JPanel();
+        rootWindow.setLayout(new BorderLayout());
+
+        // RotesPanel
+
+        JPanel rotesPanel = new JPanel();
+        rotesPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        // BlauePanels
+
+        JPanel blauesPanelLinks = new JPanel();
+        blauesPanelLinks.setLayout(new GridLayout(5,1));
+
+        JPanel blauesPanelRechts = new JPanel();
+        blauesPanelRechts.setLayout(new GridLayout(2,1));
+
+        // ButtonPanel
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         // JPANELS für einzelne Felder
 
@@ -58,7 +81,7 @@ public class DemoLogOnUI extends JFrame {
         // PortFeld
 
         JFormattedTextField portField = new JFormattedTextField(intOnly);
-        portField.setColumns(2);
+        portField.setColumns(3);
 
         portPanel.add(portField);
 
@@ -83,28 +106,6 @@ public class DemoLogOnUI extends JFrame {
         zielPanel.add(new JLabel("Ziel:                "));
         zielPanel.add(new JTextField(8));
 
-        // HauptPanel
-
-        JPanel rootWindow = new JPanel();
-        rootWindow.setLayout(new BorderLayout());
-
-        // RotesPanel
-
-        JPanel rotesPanel = new JPanel();
-        rotesPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-
-        // BlauePanels
-
-        JPanel blauesPanelLinks = new JPanel();
-        blauesPanelLinks.setLayout(new GridLayout(5,1));
-
-        JPanel blauesPanelRechts = new JPanel();
-        blauesPanelRechts.setLayout(new GridLayout(2,1));
-
-        // ButtonPanel
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         // Borders
 
