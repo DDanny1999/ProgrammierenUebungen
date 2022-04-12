@@ -2,11 +2,13 @@ package ÜbungenVorlesungProgrammieren2.DemoLogOn;;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.text.ParseException;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.text.MaskFormatter;
 
 public class Logon extends JFrame {
@@ -70,6 +72,20 @@ public class Logon extends JFrame {
             }
         };
 
+        ActionListener openListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String ereignis = e.getActionCommand();
+                if (ereignis.equals("Öffnen")){
+                   JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView());
+                    chooser.showOpenDialog(null);
+                } else {
+                    System.out.println(ereignis);
+                }
+
+            }
+        };
+
         // Erstelle Menüs
 
         JMenuBar menuBar = new JMenuBar();
@@ -92,6 +108,7 @@ public class Logon extends JFrame {
         // Actions
 
         close.addActionListener(closeListener);
+        open.addActionListener(openListener);
 
         // Tooltips
 
